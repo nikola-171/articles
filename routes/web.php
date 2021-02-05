@@ -13,12 +13,12 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-//prikaz forme za registraciju
-Route::get('/registracija', 'registracijaController@prikaz_forme');
+Route::get('/', [App\Http\Controllers\WelcomeController::class, 'show_articles']);
 
 Auth::routes();
+
+Route::post('/export_csv', [App\Http\Controllers\ExportController::class, 'export_csv']);
+
+Route::post('/register_article', [App\Http\Controllers\articleRegistrationController::class, 'register_article']);
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');

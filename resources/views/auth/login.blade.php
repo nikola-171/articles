@@ -19,6 +19,7 @@
 
                                 @error('email')
                                     <span class="invalid-feedback" role="alert">
+                                        <!--<strong>uneti podaci su neispravni</strong>-->
                                         <strong>{{ $message }}</strong>
                                     </span>
                                 @enderror
