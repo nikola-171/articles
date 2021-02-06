@@ -1,13 +1,6 @@
 @extends('layouts.app')
 
 @section('content')
-<div class="container">
-    
-    
-   
-
-</div>
-    
 
 <div class="container">
     <div class="row justify-content-center">
@@ -18,12 +11,14 @@
                     Post a new article
                 </a>
             @else
-                <h4 class="h4">Register to be able to post articles.</h4>    
+                <h4 class="h4">Login to be able to post articles.</h4>    
             @endauth
 
             @if(count($articles) == 0)
-                <div class="alert alert-info">
-                    There are no articles to post.
+                <div class="align-middle">
+                    <div class="alert alert-info">
+                        <h3 class="h3">There are no articles to post.</h3>
+                    </div>
                 </div>
             @else 
                 @foreach ($articles as $article)
@@ -37,12 +32,16 @@
                     </div>
                     <br>
                 @endforeach
+                <form action="/export_csv" method="POST">
+                    @csrf
+                    <input type="hidden" name="article_id" value="{!! $article->id !!}">
+                    <button type="submit" class="btn btn-primary">download all articles in a csv file</button>
+                </form>
+                <br>
+                <div class="d-flex justify-content-center">
+                    {{ $articles->links() }}
+                </div>
             @endif
-            <form action="/export_csv" method="POST">
-                @csrf
-                <input type="hidden" name="article_id" value="{!! $article->id !!}">
-                <button type="submit" class="btn btn-primary">download all articles in a csv file</button>
-            </form>
         </div>
     </div>
     

@@ -1,0 +1,9 @@
+#form{
+    width:100%; 
+    min-width:300px; 
+    max-width:75vh;
+}
+
+#content{
+    resize:none;
+}
