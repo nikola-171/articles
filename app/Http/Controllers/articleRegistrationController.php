@@ -8,6 +8,8 @@ use App\Models\Article;
 
 class articleRegistrationController extends Controller
 {
+    const SUCCESS = 'you sucessfully posted a blog';
+
     public function register_article(Request $request){
         $request->validate([
             'title' => 'required|max:50',
@@ -25,6 +27,6 @@ class articleRegistrationController extends Controller
 
         Article::create($data);
 
-        return redirect('/');
+        return view('home')->with('success', articleRegistrationController::SUCCESS);
     }
 }

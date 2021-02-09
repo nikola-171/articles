@@ -8,6 +8,20 @@
 <div class="container">
     <div class="row justify-content-center">
         <div class="col-md-8">
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
+            @isset($success)
+                <div class="alert alert-success">
+                    <h4 class="h4">{!! $success !!}</h4>
+                </div>
+            @endif
             <div class="card">
                 <div class="card-header">Add a new artical </div>
                     <div class="card-body">
@@ -41,15 +55,6 @@
                                     <button type="submit" class="btn btn-primary">submit</button>
                                 </div>
                             </form>
-                            @if ($errors->any())
-                                <div class="alert alert-danger">
-                                    <ul>
-                                        @foreach ($errors->all() as $error)
-                                            <li>{{ $error }}</li>
-                                        @endforeach
-                                    </ul>
-                                </div>
-                            @endif
                         </div>                    
                     </div>
                 </div>            
