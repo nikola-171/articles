@@ -14,9 +14,9 @@ begin
 	declare title_2 varchar(50) default 'Is this blog amaizing?';
     declare title_3 varchar(50) default 'How should this app be improved?';
 
-	declare content_1 varchar(50) default 'This is just an example of how the aplication is working.';
-	declare content_2 varchar(50) default 'This is a very simple and amaizing blog!';
-	declare content_3 varchar(50) default 'Many new features can be added to this blog.';
+	declare content_1 varchar(255) default 'This is just an example of how the aplication is working.';
+	declare content_2 varchar(255) default 'This is a very simple and amaizing blog!';
+	declare content_3 varchar(255) default 'Many new features can be added to this blog.';
 
     declare author varchar(50) default 'Nikola Tošić';
     declare date varchar(50) default '2021-6-2';
