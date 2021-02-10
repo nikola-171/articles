@@ -10,7 +10,7 @@ class WelcomeController extends Controller
 {
     function show_articles(){
 
-        $articles = Article::orderBy('id','DESC')->paginate(5);
+        $articles = Article::orderBy('id','DESC')->simplePaginate(5);
         
         return view('welcome')->with('articles', $articles);
     }
